@@ -1,0 +1,60 @@
+// John Carlo Barrera
+//BSIT2-1
+// OE-8
+clearOutput();
+addEventListener("mousemove", 
+    function(event) { 
+      
+       //print("click A"); 
+       print(event.clientX + "," + event.clientY)
+       sleep(1000)
+    }, 
+    true // false=bubbling, true=capturing
+    //false
+    
+)
+
+A.addEventListener("mousemove", 
+    function(event) { 
+      
+       //print("click A"); 
+       print(event.clientX + "," + event.clientY)
+       sleep(1000)
+    }, 
+    true // false=bubbling, true=capturing
+    //false
+    
+)
+
+C.addEventListener("click", 
+    function(event) { 
+      event.stopPropagation();
+       print("click C"); 
+    }, 
+    false // false=bubbling, true=capturing
+)
+
+D.addEventListener("mousedown", 
+    function(event) { 
+       print("click D"); 
+       print("held down"); 
+    }, 
+    false // false=bubbling, true=capturing
+)
+
+F.addEventListener("mouseup", 
+    function(event) { 
+       print("click F"); 
+       print("released"); 
+    }, 
+    false // false=bubbling, true=capturing
+)
+
+G.addEventListener("dblclick", 
+    function(event) { 
+       print("click G"); 
+       print("double-clicked"); 
+    }, 
+    false // false=bubbling, true=capturing
+)
+print("Ready");
